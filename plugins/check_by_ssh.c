@@ -121,7 +121,7 @@ main (int argc, char **argv)
 		else
 			printf (_("%s - check_by_ssh: Remote command '%s' returned status %d\n"),
 			        state_text(result), remotecmd, result);
-		return result; 	/* return error status from remote command */
+		return max_state_alt(result, STATE_UNKNOWN); 	/* return error status from remote command */
 	}
 
 
